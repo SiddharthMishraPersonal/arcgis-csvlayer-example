@@ -140,7 +140,7 @@ async function setupWebsite() {
   logger.trace('APP:: Setting up website with express.');
   return new Promise((resolve, reject) => {
     try {
-      const distPath = Path.join(__dirname, '..', 'dist');
+      const distPath = Path.join(__dirname, 'dist');
       httpApp.use(express.static(distPath)); // Website's dist folder.
       httpApp.get('/', (req, res, next) => {
         res.redirect('/');
