@@ -1,0 +1,5 @@
+"incidentResponse":
+  $ref: './responses/incidentResponse.yaml'
+"errorMessage":
+  $ref: './others/errorMessage.yaml'
+

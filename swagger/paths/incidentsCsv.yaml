@@ -1,0 +1,36 @@
+x-swagger-router-controller: IncidentsCsvController
+get:
+  security:
+    - bearer: []
+  description: Returns Incidents based on search parameters.
+  operationId: getIncidents
+  produces:
+    - application/json
+  tags:
+    - incidents
+  responses:
+    200:
+      description: |
+        Returns Incidents in CSV format.
+      schema:
+        "$ref": "../definitions/responses/incidentResponse.yaml"
+    400:
+      description: |
+        Bad Request. The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.
+      schema:
+        "$ref": "../definitions/others/errorMessage.yaml"
+    403:
+      description: |
+        Forbidden Error. The server understood the request, but is refusing to fulfill it. Authorization will not help and the request SHOULD NOT be repeated.
+      schema:
+        "$ref": "../definitions/others/errorMessage.yaml"
+    404:
+      description: |
+        Not Found. The server has not found anything matching the Request-URI. No indication is given of whether the condition is temporary or permanent.
+      schema:
+        "$ref": "../definitions/others/errorMessage.yaml"
+    500:
+      description: |
+        Internal Server Error. The server encountered an unexpected condition which prevented it from fulfilling the request.
+      schema:
+        "$ref": "../definitions/others/errorMessage.yaml"

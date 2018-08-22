@@ -1,0 +1,13 @@
+type: object
+description: Error object with array of all errors.
+required:
+  - errors
+properties:
+  errors:
+    type: array
+    description: Alphanumerical error code (e.g. ForbiddenError, InternalServerError, etc.)
+    items:
+      type: object
+      properties:
+        error:
+          type: string

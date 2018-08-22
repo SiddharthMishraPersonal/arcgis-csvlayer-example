@@ -1,0 +1,12 @@
+{
+  "logLevel": "trace",
+  "host": "localhost",
+  "port": 3000,
+  "maxRequestSize": "5000kb",
+  "cache": {
+    "isLocal": true,
+    "host": "localredis.net",
+    "port": 32771,
+    "ttl": 28800
+  }
+}

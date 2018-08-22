@@ -1,0 +1,39 @@
+{
+  "name": "arcgis-csvlayer-example",
+  "version": "1.0.0",
+  "description": "An Angular 6 example for ArcGIS JavaScript 4.8 CSVLayer with Heatmap renderer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SiddharthMishraPersonal/arcgis-csvlayer-example.git"
+  },
+  "keywords": [
+    "angular6",
+    "esri",
+    "arcgis",
+    "javascript"
+  ],
+  "author": "Siddharth Mishra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SiddharthMishraPersonal/arcgis-csvlayer-example/issues"
+  },
+  "homepage": "https://github.com/SiddharthMishraPersonal/arcgis-csvlayer-example#readme",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "bunyan": "^1.8.12",
+    "express": "^4.16.3",
+    "good-guy-http": "^1.10.3",
+    "json2csv": "^4.2.1",
+    "nconf": "^0.10.0",
+    "node-cache": "^4.2.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "swagger-parser": "^5.0.2",
+    "swagger-tools": "^0.10.4",
+    "valid-url": "^1.0.9"
+  }
+}
