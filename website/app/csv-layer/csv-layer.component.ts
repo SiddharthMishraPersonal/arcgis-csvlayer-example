@@ -188,7 +188,7 @@ export class CsvLayerComponent implements OnInit, AfterViewInit {
     const layer = new CSVLayer({
       url: url,
       title: "Incidents as HeatMap",
-      copyright: "Motorola Solutions Inc.",
+      copyright: "Copyright © 2018 Siddharth Mishra.",
       popupTemplate: template,
       renderer: renderer,
       opacity: 0.6
