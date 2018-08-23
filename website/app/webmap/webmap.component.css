@@ -1,0 +1,13 @@
+.ol-zoom {
+  left: unset;
+  right: 8px;
+}
+
+.map-base-container-inner {
+  width: 100%;
+  height: 100%;
+}
+
+.map-content {
+  display: none;
+}

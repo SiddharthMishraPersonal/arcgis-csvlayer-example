@@ -41,6 +41,8 @@
     "@angular/router": "^6.1.0",
     "bluebird": "^3.5.1",
     "bunyan": "^1.8.12",
+    "core-js": "^2.5.4",
+    "esri-loader": "^2.4.0",
     "express": "^4.16.3",
     "good-guy-http": "^1.10.3",
     "json2csv": "^4.2.1",
@@ -48,11 +50,10 @@
     "node-cache": "^4.2.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
+    "rxjs": "^6.0.0",
     "swagger-parser": "^5.0.2",
     "swagger-tools": "^0.10.4",
     "valid-url": "^1.0.9",
-    "core-js": "^2.5.4",
-    "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {

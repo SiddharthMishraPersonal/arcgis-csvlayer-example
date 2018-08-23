@@ -141,6 +141,7 @@ async function setupWebsite() {
   return new Promise((resolve, reject) => {
     try {
       const distPath = Path.join(__dirname, 'dist');
+      console.log(distPath);
       httpApp.use(express.static(distPath)); // Website's dist folder.
       httpApp.get('/', (req, res, next) => {
         res.redirect('/');
