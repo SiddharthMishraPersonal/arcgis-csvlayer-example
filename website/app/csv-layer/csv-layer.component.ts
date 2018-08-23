@@ -113,7 +113,7 @@ export class CsvLayerComponent implements OnInit, AfterViewInit {
         " population in this zip code is married.</p>" +
         "<ul><li>{city} people are married</li>" +
         "<li>{state} have never married</li>" +
-        "<li>{postalCode} are divorced</li><ul>";
+        "<li>{postalCode} are divorced</li><ul>"
     };
 
     const renderer = {
