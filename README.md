@@ -1,36 +1,30 @@
+
 # arcgis-csvlayer-example
-An example for ArcGIS JavaScript 4.8 CSVLayer with Heatmap renderer.
-
-##Swagger Docs
-http://localhost:3000/api/arcgis/v1/docs/#/
-
-##CSV Data Endpoint
-To get csv data hit: http://localhost:3000/api/arcgis/v1/incidents.csv
-
-# Csvlayer
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
+
+# Purpose
+This angular project is created to make a component which will host a map with Heatmap layer.
+This project has been created to get help from the community to fix the heatmap issue.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The website runs under expressJs node server. To launch website follow the steps:
 
-## Code scaffolding
+1. Clone the repository.
+2. Run `npm install`.
+3. Run `npm run start`.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Last command is composite of 2 commands: `npm run build && node app.js`
+The command `npm run build` will run `ng build` and put build artifacts under `./dist` folder. 
+The command `node app.js` will start the ExpressJs server at http://localhost:3000.
 
-## Build
+Hit http://localhost:3000 on browser and it will lauch the website.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Swagger Docs
+http://localhost:3000/api/arcgis/v1/docs/#/
 
-## Running unit tests
+## CSV Data Endpoint
+To get csv data hit: http://localhost:3000/api/arcgis/v1/incidents.csv
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Problem:
+Unfortunately, the heatmap layer never gets rendered on CSV Layer and the webmap layer which has been copied from the ArcGIS For Developers website: Create a scale-dependent visualization text (https://developers.arcgis.com/javascript/latest/sample-code/visualization-heatmap-scale/index.html)
