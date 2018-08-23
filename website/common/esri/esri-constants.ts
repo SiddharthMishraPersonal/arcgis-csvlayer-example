@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 Motorola Solutions Inc., USA
+ * Copyright © 2018 Siddharth Mishra., USA
  */
 import { LayerProviderType } from './layer-types/layer-provider-type';
 
