@@ -28,3 +28,5 @@ To get csv data hit: http://localhost:3000/api/arcgis/v1/incidents.csv
 
 # Problem:
 Unfortunately, the heatmap layer never gets rendered on CSV Layer and the webmap layer which has been copied from the ArcGIS For Developers website: Create a scale-dependent visualization text (https://developers.arcgis.com/javascript/latest/sample-code/visualization-heatmap-scale/index.html)
+
+![picture alt](https://github.com/SiddharthMishraPersonal/arcgis-csvlayer-example/blob/master/website/assets/screenshot.png "Website ScreenShot")
