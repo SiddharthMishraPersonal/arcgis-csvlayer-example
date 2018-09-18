@@ -3,6 +3,13 @@
  */
 import { LayerProviderType } from './layer-types/layer-provider-type';
 
+export class LayerConstants {
+  public static readonly DEMO_INCIDENT_HEATMAP_LAYER = 'DEMO-incidents-heatmap-layer';
+  public static readonly DEMO_INCIDENT_SIMPLE_POINT_LAYER = 'DEMO-incidents-simple-point-layer';
+  public static readonly DEMO_INCIDENT_PREDICTION_LAYER = 'DEMO-incidents-prediction-layer';
+  public static readonly DEMO_MINI_INCIDENT_POINT_LAYER = 'DEMO-mini-incidents-point-layer';
+}
+
 export class EsriConstants {
   public static readonly FEATURE = 'Feature Layer';
   public static readonly GROUP = 'Group';

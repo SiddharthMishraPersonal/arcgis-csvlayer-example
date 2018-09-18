@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { EsriLazyApiLoader } from '../../common/esri/esri-lazy-api-loader';
 import { EsriModulesRegistry } from '../../common/esri/esri-module-registry';
-import { EsriConstants, EsriModules } from '../../common/esri/esri-constants';
+import { EsriConstants, EsriModules, LayerConstants } from '../../common/esri/esri-constants';
 
 @Component({
   selector: 'app-csv-layer',
@@ -67,7 +67,7 @@ export class CsvLayerComponent implements OnInit, AfterViewInit {
     this.mapView = new MapView({
       container: this.container.nativeElement,
       center: [-83.859328, 33.596792],
-      zoom: 11,
+      zoom: 5,
       map: this.map
     });
 
@@ -194,7 +194,79 @@ export class CsvLayerComponent implements OnInit, AfterViewInit {
       opacity: 0.6
     });
 
+    const FeatureLayer = this.esriModulesRegistry.getModule(EsriModules.FeatureLayer);
+    const featureLayer = new FeatureLayer({
+      id: LayerConstants.DEMO_INCIDENT_PREDICTION_LAYER,
+      source: [],
+      title: 'Prediction Layer',
+      fields: [
+        {
+          name: 'ObjectID',
+          alias: 'ObjectID',
+          type: 'oid'
+        }, {
+          name: 'title',
+          alias: 'titleContent',
+          type: 'string'
+        }
+      ],
+      displayField: 'title',
+      objectIdField: 'ObjectID',
+      opacity: 1,
+      spatialReference: {
+        wkid: 4326
+      },
+      geometryType: 'polygon'
+    });
+
+
+    // Create a polygon geometry
+    var polygon = {
+      type: "polygon", // autocasts as new Polygon()
+      rings: [
+        [-84.00, 32.0],
+        [-82.00, 32.0],
+        [-82.00, 30.0],
+        [-84.00, 30.0],
+        [-84.00, 32.0]
+      ]
+    };
+
+    // Create a symbol for rendering the graphic
+    var fillSymbol = {
+      type: "simple-fill", // autocasts as new SimpleFillSymbol()
+      color: [227, 139, 79, 0.8],
+      outline: { // autocasts as new SimpleLineSymbol()
+        color: [255, 255, 255],
+        width: 1
+      }
+    };
+
+    // Add the geometry and symbol to a new graphic
+    const Graphic = this.esriModulesRegistry.getModule(EsriModules.Graphic);
+    var polygonGraphic = new Graphic({
+      geometry: polygon,
+      symbol: fillSymbol
+    });
+
+    // Add the graphics to the view's graphics layer
+    this.mapView.graphics.addMany([polygonGraphic]);
+
+    this.mapView.map.add(featureLayer);
     this.mapView.map.add(layer);
+
+    const featureLayerForEvents = this.mapView.map.layers.items.filter((elem) => {
+      return elem.id === LayerConstants.DEMO_INCIDENT_PREDICTION_LAYER
+        && elem.type === 'feature';
+    })[0];
+    let source = {};
+    if (featureLayerForEvents === undefined || featureLayerForEvents === null) {
+      source = this.mapView.getMap().graphics;
+    } else {
+      source = featureLayerForEvents.source;
+    }
+
+
 
     return new Promise(resolve => layer.when(() => {
       return this.mapView.whenLayerView(layer).then(() => {
